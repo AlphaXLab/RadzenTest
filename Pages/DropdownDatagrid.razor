@@ -1,0 +1,24 @@
+@page "/dropdowndatagrid"
+
+@using RadenTest.Data
+@using System.Linq.Dynamic.Core
+
+@inject ContactContext dbContext
+
+<RadzenDropDownDataGrid TValue="string" Data=@(contacts.Select(c => c.FirstName).Distinct()) Change="@OnChange" />
+
+@code {
+    IEnumerable<Contact> contacts;
+
+    protected override void OnInitialized()
+    {
+        contacts = dbContext.Contacts.ToList();
+    }
+
+    void OnChange(object value)
+    {
+        var str = value is IEnumerable<object> ? string.Join(", ", (IEnumerable<object>)value) : value;
+
+        Console.WriteLine($"Value changed to {str}");
+    }
+}

@@ -1,0 +1,75 @@
+is_global = true
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = RadenTest
+build_property.RootNamespace = RadenTest
+build_property.ProjectDir = /Users/kyawsithu/Developer/Codes/experimentals/blazor/RadenTest/
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = /Users/kyawsithu/Developer/Codes/experimentals/blazor/RadenTest
+build_property._RazorSourceGeneratorDebug = 
+
+[/Users/kyawsithu/Developer/Codes/experimentals/blazor/RadenTest/App.razor]
+build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/kyawsithu/Developer/Codes/experimentals/blazor/RadenTest/Pages/Datagrid.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvRGF0YWdyaWQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/kyawsithu/Developer/Codes/experimentals/blazor/RadenTest/Pages/DatagridPerformance.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvRGF0YWdyaWRQZXJmb3JtYW5jZS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/kyawsithu/Developer/Codes/experimentals/blazor/RadenTest/Pages/DropdownDatagrid.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvRHJvcGRvd25EYXRhZ3JpZC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/kyawsithu/Developer/Codes/experimentals/blazor/RadenTest/Pages/EventConsole.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvRXZlbnRDb25zb2xlLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/kyawsithu/Developer/Codes/experimentals/blazor/RadenTest/Pages/GoogleMap.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvR29vZ2xlTWFwLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/kyawsithu/Developer/Codes/experimentals/blazor/RadenTest/Pages/Index.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvSW5kZXgucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/kyawsithu/Developer/Codes/experimentals/blazor/RadenTest/Pages/Misc.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvTWlzYy5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/kyawsithu/Developer/Codes/experimentals/blazor/RadenTest/_Imports.razor]
+build_metadata.AdditionalFiles.TargetPath = X0ltcG9ydHMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/kyawsithu/Developer/Codes/experimentals/blazor/RadenTest/Shared/MainLayout.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkL01haW5MYXlvdXQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-rrolb0qzu3
+
+[/Users/kyawsithu/Developer/Codes/experimentals/blazor/RadenTest/Shared/NavMenu.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkL05hdk1lbnUucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-c3rzaw21fk
+
+[/Users/kyawsithu/Developer/Codes/experimentals/blazor/RadenTest/Pages/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvRXJyb3IuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/kyawsithu/Developer/Codes/experimentals/blazor/RadenTest/Pages/_Host.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvX0hvc3QuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/kyawsithu/Developer/Codes/experimentals/blazor/RadenTest/Pages/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvX0xheW91dC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 

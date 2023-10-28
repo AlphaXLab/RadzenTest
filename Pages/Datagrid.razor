@@ -1,0 +1,70 @@
+@page "/datagrid"
+
+@using RadenTest.Data
+@using System.Linq.Dynamic.Core
+
+@inject ContactContext dbContext
+
+<h1>Datagrid</h1>
+
+<RadzenDataGrid AllowPaging="true" Count="@count" Data="@contacts" AllowSorting="true" PageSize="@pageSize"
+    AllowFiltering="true" FilterMode="FilterMode.Advanced" LogicalFilterOperator="LogicalFilterOperator.Or"
+    PagerHorizontalAlign="HorizontalAlign.Left" ShowPagingSummary="true" IsLoading=@isLoading Sort="@ShowLoading"
+    Page="@ShowLoading" Filter="@ShowLoading" TItem="Contact" LoadData="@LoadData">
+    <Columns>
+        <RadzenDataGridColumn TItem="Contact" Property="Id" Title="Id" Width="150px" />
+        <RadzenDataGridColumn TItem="Contact" Property="FirstName" Title="Firstname" Width="200px" />
+        <RadzenDataGridColumn TItem="Contact" Property="LastName" Title="LastName" Width="200px" />
+        <RadzenDataGridColumn TItem="Contact" Property="Phone" Title="Phone" Width="150px" />
+        <RadzenDataGridColumn TItem="Contact" Property="Street" Title="Street" />
+        <RadzenDataGridColumn TItem="Contact" Property="City" Title="City" />
+        <RadzenDataGridColumn TItem="Contact" Property="State" Title="State" Width="150px" />
+    </Columns>
+</RadzenDataGrid>
+
+@code {
+    IEnumerable<Contact> contacts;
+    int count;
+    int pageSize = 15;
+    bool isLoading = false;
+
+    protected override void OnInitialized()
+    {
+    }
+
+    async Task ShowLoading()
+    {
+        isLoading = true;
+
+        await Task.Yield();
+
+        isLoading = false;
+    }
+
+    void LoadData(LoadDataArgs args)
+    {
+        Task.Run(async () => await ShowLoading()).Wait();
+        // This demo is using https://dynamic-linq.net
+        var query = dbContext.Contacts.AsQueryable();
+
+        if (!string.IsNullOrEmpty(args.Filter))
+        {
+            // Filter via the Where method
+            query = query.Where(args.Filter);
+        }
+
+        if (!string.IsNullOrEmpty(args.OrderBy))
+        {
+            // Sort via the OrderBy method
+            query = query.OrderBy(args.OrderBy);
+        }
+
+        // Important!!! Make sure the Count property of RadzenDataGrid is set.
+        count = query.Count();
+
+        // Perform paging via Skip and Take.
+        contacts = query.Skip(args.Skip.Value).Take(args.Top.Value).ToList();
+
+        // Add StateHasChanged(); for DataGrid to update if your LoadData method is async.
+    }
+}

@@ -1,0 +1,21 @@
+@page "/misc"
+
+<h1>Misc</h1>
+
+<RadzenButton Text="Hello world!" />
+
+<RadzenDropDown Data=@items TextProperty="Name" TValue="int" />
+
+@code {
+    class DataItem
+    {
+        public string Name { get; set; }
+        public int Value { get; set; }
+    }
+
+    IEnumerable<DataItem> items = new List<DataItem>()
+{
+new DataItem { Name = "Jane Doe", Value = 1},
+new DataItem { Name = "John Doe", Value = 2},
+};
+}

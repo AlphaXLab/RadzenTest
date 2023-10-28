@@ -1,0 +1,56 @@
+@page "/datagridperf"
+
+@using Microsoft.EntityFrameworkCore
+@using RadenTest.Data
+@using System.Linq.Dynamic.Core
+
+@inject ContactContext dbContext
+
+<RadzenDataGrid AllowFiltering="true" AllowColumnResize="true" AllowAlternatingRows="false"
+    FilterMode="FilterMode.Advanced" AllowSorting="true" PageSize="5" AllowPaging="true"
+    PagerHorizontalAlign="HorizontalAlign.Left" Data="@users" TItem="User" ColumnWidth="300px"
+    LogicalFilterOperator="LogicalFilterOperator.Or" ShowPagingSummary="true" IsLoading=@isLoading Sort="@ShowLoading"
+    Page="@ShowLoading" Filter="@ShowLoading">
+    <Columns>
+        <RadzenDataGridColumn TItem="User" Property="Id" Title="User ID" />
+        <RadzenDataGridColumn TItem="User" Property="FirstName" Title="Firstname" />
+        <RadzenDataGridColumn TItem="User" Property="Phone" Title="Phone" />
+    </Columns>
+</RadzenDataGrid>
+
+@code {
+    IQueryable<User> users;
+    bool isLoading = false;
+
+    async Task ShowLoading()
+    {
+        isLoading = true;
+
+        await Task.Yield();
+
+        isLoading = false;
+    }
+
+    protected override async Task OnInitializedAsync()
+    {
+        await base.OnInitializedAsync();
+
+        await ShowLoading();
+
+        users = from c in dbContext.Contacts
+                select new User()
+                    {
+                        Id = c.Id,
+                        FirstName = c.FirstName,
+                        Phone = c.Phone
+                    };
+    }
+
+    public class User
+    {
+        public int Id { get; set; }
+        public string? FirstName { get; set; }
+        public string? Phone { get; set; }
+    }
+
+}
